@@ -30,6 +30,7 @@ namespace Regula_falsi_metodu
     
         public static List<Result> calcResult(double interval1,double interval2,string func, int acc,int digit)
         {
+            
             Function f = new Function("f(x)=" + func);
             List<Result> rList = new List<Result>();
            

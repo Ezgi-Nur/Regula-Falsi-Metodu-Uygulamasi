@@ -91,7 +91,7 @@ namespace Regula_falsi_metodu
 
         private async void btnHesapla_Click(object sender, RoutedEventArgs e)
         {
-
+            txtFunc.Text = txtFunc.Text.Replace(',', '.');
             if (double.TryParse(txtInterval1.Text, out interval1) &&
                double.TryParse(txtInterval2.Text, out interval2) &&
                Calculate.controlFuncSyntax(txtFunc.Text))
@@ -111,6 +111,7 @@ namespace Regula_falsi_metodu
                         decimalPlaces = (int)cmbAccuracy.SelectedValue;
                         decimalFormat = "F" + decimalPlaces.ToString();
                     }
+                    
                        rList= Calculate.calcResult(interval1, interval2, txtFunc.Text, (int)cmbAccuracy.SelectedValue, decimalPlaces);
                     gridStep.Visibility = Visibility.Visible;
                     gridStep.IsEnabled = true;
